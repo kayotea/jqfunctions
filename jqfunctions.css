@@ -1,0 +1,107 @@
+/* stylesheet for jqfunctions.html */
+
+#wrapper{
+    background: lightcoral;
+    border-radius: 10px 10px 0px 0px;
+    width: 900px;
+    height: 910px;
+    margin: 0px auto;
+}
+#landscape{
+    border-radius: 10px 10px 0px 0px;
+    margin: 0px auto;
+    width: 900px;
+    height: 300px;
+}
+.day{
+    background: lightblue;
+}
+.night{
+    background: darkslateblue;
+}
+#sky{
+    background: transparent;
+    width: 900px;
+    height: 110px;
+}
+#grass{
+    background: darkolivegreen;
+    border-radius: 0px 0px 10px 10px;
+    width: 900px;
+    height: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+#sun{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 10px 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+.yellow{
+    background: yellow;
+}
+.grey{
+    background: lightgrey;
+}
+
+button{
+    margin: 10px;
+}
+.cloud {
+    width: 150px;
+    height: 100px;
+}
+.tree{
+    width: 200px;
+    height: 200px;
+    margin: 0px 40px;
+    float: none;
+}
+#testblock{
+    background: white;
+    border: 1px solid silver;
+    width: 900px;
+    height: 170px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: scroll;
+}
+h3{
+    color: coral;
+    display: inline-block;
+    margin-left: 20px;
+}
+p{
+    margin: 5px 20px;
+}
+.font{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+.center{
+    text-align: center;
+}
+.textcolor{
+    color: darkred;
+}
+div.blob{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin: 10px 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+.green{
+    background-color: lightgreen;
+}
+.blue{
+    background-color: lightblue;
+}
+.pink{
+    background-color: lightpink;
+}

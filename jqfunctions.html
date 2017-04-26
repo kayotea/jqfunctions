@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title>JQuery Functions</title>
+        <link rel="stylesheet" type="text/css" href="jqfunctions.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $('#sun').hide();
+                $('.showsun').click(function(){
+                    $('#sun').show();
+                });
+
+                $('.sunny').click(function(){
+                    $('#sun').toggleClass('grey');
+                    $('#landscape').toggleClass('night');
+                });
+
+                $('img').hide();
+                $('.overcast').click(function(){
+                    $('.cloud').fadeIn(1000);
+                });
+                $('.clear').click(function(){
+                    $('.cloud').fadeOut(1000);
+                });
+
+                $('.grow').click(function(){
+                    $('.tree').slideToggle();
+                });
+
+                $('.addred').click(function(){
+                    $('span').addClass('textcolor');
+                });
+                $('.remred').click(function(){
+                    if($('span').hasClass('textcolor')){
+                        $('span').removeClass();
+                    }  
+                });
+
+                $('.addafter').click(function(){
+                    $('p.addme').after('<p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>');
+                });
+                $('.addbefore').click(function(){
+                    $('p.addme').before('<p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. </p>');
+                });
+                $('.append').click(function(){
+                    $('p.addme').before("<p>  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.<p>");
+                });
+
+                $('.blobsayshi').click(function(){
+                    $('.blob').html('<p class="center" >Hi!</p>');
+                });
+                $('.blobchange').click(function(){
+                    $('.blob').attr('class', 'blob pink');
+                });
+                $('.blobby').click(function(){
+                    var text=$('h3:last').text();
+                    $('input').val(text);
+                });
+                $('.sundata').click(function(){
+                    var data=$('#sun').data();
+                    console.log(data);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper" class="font">
+            <div id="landscape" class="day">
+                <div id="sky">
+                <div id="sun" class="yellow"></div>
+                    <img class="cloud" src="cloud.png" />
+                    <img class="cloud" src="cloud.png" />
+                    <img class="cloud" src="cloud.png" />
+                    <img class="cloud" src="cloud.png" />
+                    <img class="cloud" src="cloud.png" />
+                </div>
+                <img class="tree" src="tree.png" />
+                <img class="tree" src="tree.png" />
+                <img class="tree" src="tree.png" />
+            </div>
+            <div id="grass">
+                <button class="showsun">show sun/moon</button>
+                <button class="sunny">night/day</button>
+                <button class="overcast">overcast</button>
+                <button class="clear">clear day</button>
+
+                <button class="grow">toggle drop/abduct trees</button>
+            </div>
+            <div id="testblock">
+                <h3 class="center">AddClass</h3>
+                <button class="addred">Red</button>
+                <button class="remred">Black</button>
+                <p><span>Click the button to change my color! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</span></p>
+            </div>
+            <div id="testblock">
+                <h3 class="center">Add Paragraphs</h3>
+                <button class="addbefore">Add Before</button>
+                <button class="addafter">Add After</button>
+                <button class="append">Append</button>
+                <p class="addme"><span class="textcolor">Click the buttons to add text!</span></p>
+            </div>
+            <div id="testblock">
+                <h3 class="center">About The Blobs</h3>
+                <button class="blobsayshi">The Blobs Say Hi</button>
+                <button class="blobchange">Make Them Pink</button>
+                <button class="blobby">Slot About The Blobs</button>
+                <button class="sundata">Sun Data</button><br>
+                <div class="blob green"></div>
+                <div class="blob blue"></div>
+                <div class="blob grey"></div>
+                <input type="text" id="name" name="name" value="">
+            </div>
+        </div>
+    </body>
+</html>
