@@ -6,60 +6,64 @@
         <script type="text/javascript">
             $(document).ready(function(){
 
-                $('#sun').hide();
-                $('.showsun').click(function(){
-                    $('#sun').show();
+                $('#sun').hide();                   // sun is hidden when page loads
+                $('.showsun').click(function(){     // click this button to show the sun
+                    $('#sun').show();               // the sun is shown
                 });
 
-                $('.sunny').click(function(){
-                    $('#sun').toggleClass('grey');
-                    $('#landscape').toggleClass('night');
+                $('.sunny').click(function(){               // click this to toggle day/night
+                    $('#sun').toggleClass('grey');          // turns the sun into the moon (grey)
+                    $('#landscape').toggleClass('night');   // turns the sky dark (night)
                 });
 
-                $('img').hide();
-                $('.overcast').click(function(){
-                    $('.cloud').fadeIn(1000);
+                $('img').hide();                    // hides all images when the page loads
+                $('.overcast').click(function(){    // click to show cloud images
+                    $('.cloud').fadeIn(1000);       // cloud images fade in
                 });
-                $('.clear').click(function(){
-                    $('.cloud').fadeOut(1000);
-                });
-
-                $('.grow').click(function(){
-                    $('.tree').slideToggle();
+                $('.clear').click(function(){       // click to hide cloud images
+                    $('.cloud').fadeOut(1000);      // cloud images fade out
                 });
 
-                $('.addred').click(function(){
-                    $('span').addClass('textcolor');
+                $('.grow').click(function(){        // click to make trees appear
+                    $('.tree').slideToggle();       // toggles tree appearance/dissapearance
                 });
-                $('.remred').click(function(){
-                    if($('span').hasClass('textcolor')){
-                        $('span').removeClass();
+
+                $('.addred').click(function(){              // click to add red color to text
+                    $('span').addClass('textcolor');        // adds class with red color to text
+                });
+                $('.remred').click(function(){              // click to take red color away from text
+                    if($('span').hasClass('textcolor')){    // if there's color on the text
+                        $('span').removeClass();            // remove red text class
                     }  
                 });
 
-                $('.addafter').click(function(){
+                $('.addafter').click(function(){    // click to add paragraph after initial text
                     $('p.addme').after('<p>Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.</p>');
                 });
-                $('.addbefore').click(function(){
+                $('.addbefore').click(function(){   // click to add paragraph before initial text
                     $('p.addme').before('<p>Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. </p>');
                 });
-                $('.append').click(function(){
-                    $('p.addme').before("<p>  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.<p>");
+                $('.append').click(function(){      // click to ppend paragraph at end of initial text
+                    $('p.addme').append("<p>  Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.<p>");
                 });
 
-                $('.blobsayshi').click(function(){
-                    $('.blob').html('<p class="center" >Hi!</p>');
+                $('.blobsayshi').click(function(){  // adds "Hi!" to inside of blobs
+                    $('.blob').html('<p class="center" >:)</p>');
                 });
-                $('.blobchange').click(function(){
+                $('.blobchange').click(function(){  // makes blobs pink by giving them .pink class
                     $('.blob').attr('class', 'blob pink');
                 });
-                $('.blobby').click(function(){
-                    var text=$('h3:last').text();
-                    $('input').val(text);
+                $('.blobby').click(function(){      // when clicked sets value to text box
+                    var text=$('h3:last').text();   // pulls value of text blocks from header
+                    $('input').val(text);           // sets value of text block to header text
                 });
-                $('.sundata').click(function(){
-                    var data=$('#sun').data();
-                    console.log(data);
+
+                $('.blobdata').click(function(){     
+                    $('.blob:last').data("greeting", "Hello");  // store "Hello" inside last blob
+                });
+                $('.blobdata2').click(function(){    
+                     
+                    // alert($('.blob:last').data("greeting"));    // blob reterns "Hello"
                 });
             });
         </script>
@@ -88,7 +92,7 @@
                 <button class="grow">toggle drop/abduct trees</button>
             </div>
             <div id="testblock">
-                <h3 class="center">AddClass</h3>
+                <h3 class="center">Add Class</h3>
                 <button class="addred">Red</button>
                 <button class="remred">Black</button>
                 <p><span>Click the button to change my color! Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</span></p>
@@ -102,14 +106,16 @@
             </div>
             <div id="testblock">
                 <h3 class="center">About The Blobs</h3>
-                <button class="blobsayshi">The Blobs Say Hi</button>
+                <button class="blobsayshi">Blobs Smile</button>
                 <button class="blobchange">Make Them Pink</button>
                 <button class="blobby">Slot About The Blobs</button>
-                <button class="sundata">Sun Data</button><br>
+                <button class="blobdata">Say Hello To The Blobs</button>
+                <button class="blobdata2">The Blobs Say Hello Back</button><br>
                 <div class="blob green"></div>
                 <div class="blob blue"></div>
                 <div class="blob grey"></div>
                 <input type="text" id="name" name="name" value="">
+                <p class="store"></p>
             </div>
         </div>
     </body>
